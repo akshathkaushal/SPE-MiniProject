@@ -19,7 +19,7 @@ pipeline {
 		stage('Build docker image') {
 			steps {
 				script {
-					sh 'sudo -S docker build .'
+					sh 'docker build .'
 				}
 			}
 		}
