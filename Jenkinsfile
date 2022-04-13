@@ -19,7 +19,14 @@ pipeline {
 		stage('Build docker image') {
 			steps {
 				script {
-					sh 'docker build .'
+					sh 'docker build -t testingname .'
+				}
+			}
+		}
+		stage('Run docker image') {
+			steps {
+				script {
+					sh 'docker run testingname'
 				}
 			}
 		}
