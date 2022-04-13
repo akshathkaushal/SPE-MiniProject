@@ -26,7 +26,7 @@ pipeline {
 		stage('Run docker image') {
 			steps {
 				script {
-					sh 'docker run -it testingname'
+					sh 'docker run -i testingname'
 				}
 			}
 		}
