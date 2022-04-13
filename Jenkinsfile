@@ -19,14 +19,17 @@ pipeline {
 		stage('Build docker image') {
 			steps {
 				script {
-					sh 'docker build -t testingname .'
+					sh 'docker build -t akshathkaushal7/testingname .'
 				}
 			}
 		}
-		stage('Run docker image') {
+		stage('Push docker image to Dockerhub') {
 			steps {
 				script {
-					sh 'docker run -it testingname'
+					withCredentials([string(credentialsId: 'a33b090a-d58b-4ebf-a74d-662f5ee612d7', variable: 'dockerhubpwd')]) {
+						sh 'docker login -u akshathkaushal7 -p ${dockerhubpwd}'
+						sh 'docker push akshathkaushal7/testingname'
+					}
 				}
 			}
 		}
