@@ -26,7 +26,7 @@ public class Calculator {
         while(true){
             System.out.println("Enter choice:");        
             try {
-                ip = inputRead.nextInt();
+            	ip = inputRead.nextInt();
                 // inputRead.nextLine();
             } catch(InputMismatchException e) {
                 System.out.println("Exiting...");
