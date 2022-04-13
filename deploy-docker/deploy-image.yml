@@ -1,0 +1,8 @@
+---
+- name: Pull docker image of Calculator
+  hosts: localhost
+  tasks:
+    - name: Pull calculator image
+      docker_image:
+        name: akshathkaushal7/test:latest
+        source: pull

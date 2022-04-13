@@ -4,7 +4,7 @@ pipeline {
 		maven 'MAVEN'
 	}
 	stages {
-		stage('Build maven') {
+		stage('Build and Test maven') {
 			steps {
 				checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/akshathkaushal/SPE-MiniProject.git']]])
 				sh "mvn -Dmaven.test.failure.ignore=true clean package"
@@ -31,6 +31,11 @@ pipeline {
 						sh 'docker push akshathkaushal7/testingname'
 					}
 				}
+			}
+		}
+		stage('Deploy using Ansible') {
+			steps {
+				ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking:true, installation: 'ansibleenv', inventory: 'deploy-docker/inventory', playbook: 'deploy-docker/deploy-image.yml', sudoUser:null
 			}
 		}
 	}
