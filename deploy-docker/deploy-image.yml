@@ -4,5 +4,5 @@
   tasks:
     - name: Pull calculator image
       docker_image:
-        name: akshathkaushal7/test:latest
+        name: akshathkaushal7/spe-miniproject:latest
         source: pull

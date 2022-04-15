@@ -4,10 +4,16 @@ pipeline {
 		maven 'MAVEN'
 	}
 	stages {
-		stage('Build and Test maven') {
+		stage('Download the git repo') {
 			steps {
 				checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/akshathkaushal/SPE-MiniProject.git']]])
-				sh "mvn -Dmaven.test.failure.ignore=true clean package"
+			}
+		}
+		stage('Build and Test maven') {
+			steps {
+				script {
+					sh 'mvn -Dmaven.test.failure.ignore=true clean package'
+				}
 			}
 			post {
 				success {
@@ -19,7 +25,7 @@ pipeline {
 		stage('Build docker image') {
 			steps {
 				script {
-					sh 'docker build -t akshathkaushal7/testingname .'
+					sh 'docker build -t akshathkaushal7/spe-miniproject .'
 				}
 			}
 		}
@@ -28,8 +34,15 @@ pipeline {
 				script {
 					withCredentials([string(credentialsId: 'a33b090a-d58b-4ebf-a74d-662f5ee612d7', variable: 'dockerhubpwd')]) {
 						sh 'docker login -u akshathkaushal7 -p ${dockerhubpwd}'
-						sh 'docker push akshathkaushal7/testingname'
+						sh 'docker push akshathkaushal7/spe-miniproject'
 					}
+				}
+			}
+		}
+		stage('Remove the local docker image') {
+			steps {
+				script {
+					sh 'docker rmi akshathkaushal7/spe-miniproject'
 				}
 			}
 		}
