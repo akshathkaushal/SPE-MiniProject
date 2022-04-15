@@ -39,13 +39,6 @@ pipeline {
 				}
 			}
 		}
-		stage('Remove the local docker image') {
-			steps {
-				script {
-					sh 'docker rmi akshathkaushal7/spe-miniproject'
-				}
-			}
-		}
 		stage('Deploy using Ansible') {
 			steps {
 				ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking:true, installation: 'ansibleenv', inventory: 'deploy-docker/inventory', playbook: 'deploy-docker/deploy-image.yml', sudoUser:null
