@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-04-16T17:17:24 IST" name="Surefire suite" finished-at="2022-04-16T17:17:24 IST" duration-ms="372">
+    <groups>
+    </groups>
+    <test started-at="2022-04-16T17:17:24 IST" name="Surefire test" finished-at="2022-04-16T17:17:24 IST" duration-ms="372">
+      <class name="CalculatorTest">
+        <test-method signature="squareRootTest()" started-at="2022-04-16T17:17:24 IST" name="squareRootTest" finished-at="2022-04-16T17:17:24 IST" duration-ms="321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- squareRootTest -->
+        <test-method signature="powerTest()" started-at="2022-04-16T17:17:24 IST" name="powerTest" finished-at="2022-04-16T17:17:24 IST" duration-ms="322" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- powerTest -->
+        <test-method signature="factorialTest()" started-at="2022-04-16T17:17:24 IST" name="factorialTest" finished-at="2022-04-16T17:17:24 IST" duration-ms="321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- factorialTest -->
+        <test-method signature="naturalLogTest()" started-at="2022-04-16T17:17:24 IST" name="naturalLogTest" finished-at="2022-04-16T17:17:24 IST" duration-ms="322" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- naturalLogTest -->
+      </class> <!-- CalculatorTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
