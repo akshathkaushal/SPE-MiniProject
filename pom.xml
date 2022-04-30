@@ -44,7 +44,6 @@
 	    <version>4.13.2</version>
 	    <scope>test</scope>
 	</dependency>
-	
 	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 	<dependency>
 	    <groupId>org.testng</groupId>
@@ -64,14 +63,12 @@
 	    <artifactId>log4j-api</artifactId>
 	    <version>2.17.2</version>
 	</dependency>
-	
 	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 	<dependency>
 	    <groupId>org.slf4j</groupId>
 	    <artifactId>slf4j-api</artifactId>
 	    <version>2.0.0-alpha7</version>
 	</dependency>
-
 	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
 	<dependency>
 	    <groupId>org.slf4j</groupId>
@@ -79,9 +76,6 @@
 	    <version>2.0.0-alpha7</version>
 	    <scope>test</scope>
 	</dependency>
-
-
-  
   </dependencies>
   <name>SPEMiniproject</name>
   <description>This is spe miniproject</description>
