@@ -9,13 +9,6 @@ pipeline {
 				checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/akshathkaushal/SPE-MiniProject.git']]])
 			}
 		}
-		stage('Fix security issues'){
-			steps {
-				script {
-					sh 'npm audit'
-				}
-			}
-		}
 		stage('Build and Test maven') {
 			steps {
 				script {
